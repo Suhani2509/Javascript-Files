@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    label{
+        font-size: 16px;
+    }
+    .form{
+        width: 1000px;
+        margin-top: 50px;
+        padding: 50px;
+        background-color: antiquewhite;
+        margin: auto;
+        border-radius: 20px;
+
+    }
+
+    .form .i1{
+        padding: 10px;
+        width: 50%;
+        border-radius: 5px;
+        border: 2px solid red;
+        background-color: rgba(255, 138, 196, 0.493);
+    }
+     
+     #submit{
+        padding: 10px;
+        background-color: cornflowerblue;
+        border-radius: 7px;
+        color: white;
+     }
+     #name-error{
+        color: red;
+        padding: 10px;
+        border: 2px solid black;
+        background-color: white;
+        margin: 30px;
+     }
+
+     #email-error{
+        color: red;
+        padding: 10px;
+        border: 2px solid black;
+        background-color: white;
+        margin: 30px;
+     }
+
+     #num-error{
+        color: red;
+        padding: 10px;
+        border: 2px solid black;
+        background-color: white;
+        margin: 30px;
+     }
+
+     #pass-error{
+        color: red;
+        padding: 10px;
+        border: 2px solid black;
+        background-color: white;
+        margin: 30px;
+     }
+
+     #cpass-error{
+        color: red;
+        padding: 10px;
+        border: 2px solid black;
+        background-color: white;
+        margin: 30px;
+     }
+     
+</style>
+<script>
+      let handlesubmit =  ()=>{
+        let name = document.getElementById("name").value;  // value- to get value from user
+        if(name=="")
+      {
+        document.getElementById("name-error").innerHTML = "Please fill this input field"
+        return false
+      }else if(name.length<=3 || name.length>=20){
+        document.getElementById("name-error").innerHTML = "Name should be greater than 3"
+        return false;
+      }else{
+        document.getElementById("name-error").innerHTML = "Valid data"
+        document.getElementById("name-error").style.color = "blue";
+      }
+
+      let email = document.getElementById("email").value
+      let emailregex = "^[a-z0-9._%+-]+@([a-z0-9.-])+\.[a-z]{2,4}$"
+       
+      if(email==""){
+        document.getElementById("email-error").innerHTML = "Please Fill the email field"
+        return false
+      }
+        else if(!email.match(emailregex)){
+        document.getElementById("email-error").innerHTML = "Invalid Email"
+        return false;
+      }
+      
+      let number = document.getElementById("number").value
+      let numregex = "^[0-9]{10}"
+      if(number == ""){
+        document.getElementById("num-error").innerHTML = "Please Fill The Number Field"
+       return false
+      }
+      else if(!number.match(numregex)){
+        document.getElementById("num-error").innerHTML = "Invalid Number"
+       return false
+      }
+
+      let password = document.getElementById("password").value
+      let passregex = "^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$"
+
+      if(password == ""){
+        document.getElementById("pass-error").innerHTML = "Please Fill The Number Field"
+        return false
+      }else if(!password.match(passregex))
+      {
+        document.getElementById("pass-error").innerHTML = "Password Invalid"
+        return false
+      }
+
+      let confirmpass = document.getElementById("cpass").value
+
+      if(password!==confirmpass)
+      {
+        document.getElementById("cpass-error").innerHTML = "Please match the password"
+        return false
+      }else{
+        document.getElementById("cpass-error").innerHTML = ""
+      }
+
+      }
+</script>
+<body>
+    <center><h1>Login Form </h1></center>
+    <br/><br/>
+    <form class="form" onsubmit=" return handlesubmit()">    
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" name="fname" id="name" class="i1"/>
+        <span id="name-error"></span>
+        <br/><br/>
+
+        <label>Email:</label>
+        <input type="text" placeholder="Enter your Email" name="email" id="email" class="i1"/>
+        <span id="email-error"></span>
+        <br/><br/>
+
+        <label>Number:</label>
+        <input type="number" placeholder="Enter your number" name="number" id="number" class="i1"/>
+        <span id="num-error"></span>
+        <br/><br/>
+
+        <label>Password:</label>
+        <input type="text" placeholder="Enter your Password" name="pass" id="password" class="i1"/>
+        <span id="pass-error"></span>
+        <br/><br/>
+
+        <label>Confirm Password:</label>
+        <input type="text" placeholder="Enter your Confirm password" name="cpass" id="cpass" class="i1"/>
+        <span id="cpass-error"></span>
+        <br/><br/>
+
+        <center><input type="submit" value="Submit" id="submit"/></center>
+
+
+
+    </form>
+    
+</body>
+</html>

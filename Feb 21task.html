@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+    }
+    #text1{
+        background-color: lightblue;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        
+    }
+    #btn1{
+        padding: 10px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    #db{
+        background-color: palevioletred;
+        display: inline;
+        padding: 10px;
+        color: white;
+        font-size: 20px;
+    }
+    #i1{
+        margin-top: 30px;
+        
+    }
+    #input1{
+        padding: 10px;
+        font-size: 15px;
+
+    }
+    #s1{
+        border: 2px solid black;
+        padding: 5px;
+        border-radius: 3px;
+    }
+</style>
+<body>
+    <h1>Click the button to change text and background color</h1><br/><br/>
+    <span id="text1">Heyy</span><br/><br/>
+    <button id="btn1" onclick="Click()">Click Me</button><br/><br/>
+    <div id="db" ondblclick="dbclck()">Double-Click Me</div><br/><br/>
+    <img id="i1" src="spiderman.jpg" height="200px" width="250px"/><br/><br/>
+    <input id="input1" type="text" placeholder="Enter your characters" />
+    <p>character typed : <span id="s1"></span></p>
+    <a href="https://www.instagram.com/" id="link1">Instagram</a>
+
+</body>
+<script>
+
+    // 5.Prevent Default
+    let a = document.getElementById("link1")
+    a.addEventListener("click",(e)=>{
+        // e.preventDefault()     //Doesn't allow to refresh page
+        alert("NAVIGATION PREVENTED!!!")
+    })
+
+
+    // 4.Character typed inside p tag
+       let input = document.getElementById("input1")
+       let span = document.getElementById("s1")
+       input.addEventListener("input",()=>{
+        span.textContent = input.value.length
+       })
+
+
+    // 1. Button Onclick() 
+    function Click(){
+            let text = document.getElementById("text1")
+            text.innerHTML = "Text Changed!!"
+            // btn.style.backgroundColor ="blue"
+            text.style.color = "red"
+            text.style.backgroundColor = "yellow"
+        }
+
+
+        //2.Div tag double click
+        function dbclck(){
+        let div = document.getElementById("db")
+        div.style.backgroundColor = "red"
+        }
+        
+        // 3.Image mouseover and mouseout 
+        let img = document.getElementById("i1")
+        img.onmouseover = ()=> img.src="doraemon.webp"
+        img.onmouseout =()=> img.src="spiderman.jpg"
+
+        
+
+    
+
+</script>
+
+</html>

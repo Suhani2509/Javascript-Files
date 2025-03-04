@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    h1{
+        text-align: center;
+        padding: 20px;
+        font-family: cursive;
+        color:crimson;
+        text-shadow: 2px 2px 4px gainsboro;
+    }
+    
+    #card{
+        
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        margin-top: 30px;
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px black;
+    }
+    #card #card-header{
+        background-color: lightsteelblue;
+        height: 100px;
+        border-radius: 10px 10px 0 0;
+    }
+    img{
+        border-radius: 100%;
+        height: 100px;
+        width: 100px;
+        margin-top: 40px;
+    }
+    #card #card-body{
+        margin: 50px 20px 10px 10px;
+        padding: 0 0 20px 0;
+        
+    }
+
+    #card-body #heading{
+        color:#E91E63;
+        font-size: 20px;
+        
+    }
+    #card-body #p1{
+        color: rgba(94, 93, 93, 0.726);
+        font-weight: 500;
+        margin: 5px;
+    }
+    #card-body #bio{
+        font-family:serif;
+    
+    }
+    .btn1{
+        margin: 5px;
+        padding: 5px;
+        border-radius: 4px;
+        border: none;
+        color: white;
+        font-weight: 600;
+    }   
+    
+    #fb{
+        background-image: linear-gradient(to right,  #00c6ff,#0072ff);
+    }
+    
+    #insta{
+        background-image: linear-gradient(to right, #833ab4,#fd1d1d,#fcb045);
+    }
+    #twit{
+        background-image: linear-gradient(to right, #e52d27,#b31217);
+    }
+    .btn1:hover{
+        opacity: .5;
+        cursor: pointer;
+
+    }
+    
+</style>
+<body>
+    <!-- 1.Simple Profile Card -->
+     <h1>PROFILE CARD</h1>
+    <div id="card">
+      <div id="card-header">
+        <img src="snapchat.jpeg" height="200px" width="200px"/>
+      </div>
+    <div id="card-body">
+        <h3 id="heading">SUHANI SHINDE</h3>
+        <p id="p1">Web Developer</p>
+        <p id="bio">
+          Hii!!I am a Software Developer.
+          I have completed my Diploma in computer engineering.
+        </p>
+        <hr style="margin: 5px 0;"/> 
+        <h3 id="heading">Contact</h3>
+        <button class="btn1" id="fb">Facebook</button>
+        <button class="btn1" id="insta">Instagram</button>
+        <button class="btn1" id="twit">YouTube</button>
+
+
+    </div>
+
+    </div>
+</body>
+</html>
